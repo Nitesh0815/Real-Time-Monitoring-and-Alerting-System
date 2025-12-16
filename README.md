@@ -48,7 +48,7 @@ This project demonstrates how modern cloud environments can be monitored automat
 
 ## Architecture Overview
 
-![AWS Monitoring Architecture Diagram](/architecture/diagram.png)
+![Architecture Diagram](/architecture/diagram.png)
 
 - **Terraform (main.tf)** provisions the infrastructure
 - **EC2 Instance** runs monitoring tools and sample application
