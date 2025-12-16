@@ -1,4 +1,4 @@
-# 3️⃣ Real-Time Monitoring and Alerting System (Full Observability)
+#  Real-Time Monitoring and Alerting System (Full Observability)
 
 ## Introduction
 
@@ -151,7 +151,7 @@ When using this project, you **must update or provide the following values** in 
 - This is required if you want optional SSH access (even though SSH is not mandatory)
 
 ```hcl
-key_name = "your-key-pair-name"
+key_pair_name = "your-key-pair-name"
 ```
 
 > ⚠️ The key pair must already exist in the selected AWS region.
@@ -170,7 +170,7 @@ Recommended options:
 - Environment variables
 
 ```hcl
-slack_webhook_url = "https://hooks.slack.com/services/XXX/YYY/ZZZ"
+slack_bot_token = "https://hooks.slack.com/services/XXX/YYY/ZZZ"
 ```
 
 ---
@@ -181,8 +181,7 @@ slack_webhook_url = "https://hooks.slack.com/services/XXX/YYY/ZZZ"
 - SMS alerts may require enabling SMS permissions in your AWS account
 
 ```hcl
-alert_email = "your-email@example.com"
-alert_phone = "+91XXXXXXXXXX"
+admin_email = "your-email@example.com"
 ```
 
 ---
@@ -276,13 +275,26 @@ This ensures consistent dashboards across environments.
 ## Project Structure
 
 ```text
-.
-├── main.tf                 # Terraform infrastructure definition
-├── variables.tf            # Input variables
-├── outputs.tf              # Deployment outputs
-├── user-data.sh            # Automated installation & configuration
-├── grafana-dashboard.json  # Prebuilt Grafana dashboard
-└── README.md               # Project documentation
+Real-Time-Monitoring-and-Alerting-System/
+├── README.md
+├── architecture/
+│   └── diagram.png
+├── screenshorts/
+├── manual-aws-console-implementation/
+│   └──aws-console-step-by-step-guide.docx
+├── terraform/
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   └── lambda_sns_alerting.tf
+├── scripts/
+│   └── userdata.sh
+├── dashboards/
+│   └── grafana-ec2-dashboard.json
+└── lambda/
+    └── slack_alert_handler/
+        ├── lambda.py
+        └── requirements.txt
 ```
 
 ---
